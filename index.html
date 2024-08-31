@@ -1,0 +1,225 @@
+
+<!-- saved from url=(0052)file:///E:/%E4%B8%8B%E8%BD%BD/pAKrQyXeUitQoziAg.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="https://websim.creation.engine/">--><base href=".">
+<style>
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #001f3f 0%, #0a0a2a 100%);
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background-color: rgba(10, 10, 42, 0.8);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+        max-width: 1200px;
+        width: 95%;
+        backdrop-filter: blur(10px);
+    }
+
+    h1 {
+        color: #ff3333;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px #000066;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background-color: rgba(21, 21, 48, 0.6);
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 204, 204, 0.2);
+    }
+
+    .card h2 {
+        color: #00cccc;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+
+    .btn {
+        background-color: #ff3333;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        background-color: #cc2929;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+    }
+
+    .icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        color: #00cccc;
+    }
+
+    #clock {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 1.2em;
+        color: #00cccc;
+    }
+
+    .notification {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #ff3333;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: none;
+        animation: fadeInOut 5s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; }
+        10%, 90% { opacity: 1; }
+    }
+
+    #super-admin-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ff3333;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #super-admin-btn:hover {
+        background-color: #cc2929;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+<div id="clock">16:57:24</div>
+<div class="notification" id="notification" style="display: block;">High traffic detected</div>
+<div class="container">
+    <h1>小游戏</h1>
+    <div class="grid">
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <img src="https://websim.creation.engine/pic/1.webp">
+            <h2>满天星</h2>
+            <a href="https://k-on.us.kg/game/star" class="btn">View</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">🔒</div>
+            <h2>Security</h2>
+            <a href="https://websim.creation.engine/security" class="btn">view</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">📁</div>
+            <h2>Content</h2>
+            <a href="https://websim.creation.engine/content" class="btn">Edit</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">👥</div>
+            <h2>Users</h2>
+            <a href="https://websim.creation.engine/users" class="btn">Manage</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">🔧</div>
+            <h2>Settings</h2>
+            <a href="https://websim.creation.engine/settings" class="btn">Configure</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">📈</div>
+            <h2>Analytics</h2>
+            <a href="https://websim.creation.engine/analytics" class="btn">View</a>
+        </div>
+        <div class="card">
+            <div class="icon">💾</div>
+            <h2>Backup</h2>
+            <a href="https://websim.creation.engine/backup" class="btn">Manage</a>
+        </div>
+        <div class="card" style="transform: scale(1); box-shadow: none;">
+            <div class="icon">🔔</div>
+            <h2>Notifications</h2>
+            <a href="https://websim.creation.engine/notifications" class="btn">View</a>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        document.getElementById('clock').textContent = timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function showNotification(message) {
+        const notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000);
+    }
+
+    // Simulating random notifications
+    setInterval(() => {
+        const messages = [
+            "New user registered",
+            "Backup completed successfully",
+            "Security alert: Unusual login attempt",
+            "System update available",
+            "High traffic detected"
+        ];
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        showNotification(randomMessage);
+    }, 20000);
+
+    // Add hover effect to cards
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'scale(1.05)';
+            card.style.boxShadow = '0 10px 20px rgba(0, 204, 204, 0.3)';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.transform = 'scale(1)';
+            card.style.boxShadow = 'none';
+        });
+    });
+</script>
+</body></html>
